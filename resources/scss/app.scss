@@ -49,10 +49,14 @@ body {
   font-size: 0.875em;
 }
 
-.reserved {
+.pos-relative {
   position: relative;
 }
 
 .invalid-feedback {
   min-height: 1.2em;
+}
+
+.card-image {
+  width: 80px;
 }

@@ -24,21 +24,6 @@
                         @endif
 
                         {{ __('You are logged in!') }}
-                        <div class="d-flex mt-3 gap-3">
-                            <p>
-                                <a href="{{ url('/vinyls') }}">
-                                    {{ __('Vinyls') }}</a>
-                            </p>
-                            <p>
-                                <a href="{{ url('/labels') }}">
-                                    {{ __('Labels') }}</a>
-                            </p>
-                            <p>
-                                <a href="{{ url('/genres') }}">
-                                    {{ __('Genres') }}</a>
-                            </p>
-                        </div>
-
                     </div>
                 </div>
             </div>

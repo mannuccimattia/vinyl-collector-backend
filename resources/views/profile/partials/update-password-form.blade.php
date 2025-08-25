@@ -11,7 +11,7 @@
         @method('put')
 
         <!-- Current Password -->
-        <div class="mb-2 reserved">
+        <div class="mb-2 pos-relative">
             <label for="current_password">{{ __('Current Password') }}</label>
             <input class="form-control dark @error('current_password', 'updatePassword') is-invalid @enderror"
                 type="password" name="current_password" id="current_password" autocomplete="current-password">
@@ -24,7 +24,7 @@
         </div>
 
         <!-- New Password -->
-        <div class="mb-2 reserved">
+        <div class="mb-2 pos-relative">
             <label for="password">{{ __('New Password') }}</label>
             <input class="form-control dark @error('password', 'updatePassword') is-invalid @enderror" type="password"
                 name="password" id="password" autocomplete="new-password">
@@ -37,7 +37,7 @@
         </div>
 
         <!-- Confirm Password -->
-        <div class="mb-2 reserved">
+        <div class="mb-2 pos-relative">
             <label for="password_confirmation">{{ __('Confirm Password') }}</label>
             <input class="form-control dark @error('password_confirmation', 'updatePassword') is-invalid @enderror"
                 type="password" name="password_confirmation" id="password_confirmation" autocomplete="new-password">
