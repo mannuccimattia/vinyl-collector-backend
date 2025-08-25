@@ -42,3 +42,17 @@ body {
 .input-group-text {
   min-width: 140px;
 }
+
+.invalid-feedback,
+#status-message {
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+}
+
+.reserved {
+  position: relative;
+}
+
+.invalid-feedback {
+  min-height: 1.2em;
+}
