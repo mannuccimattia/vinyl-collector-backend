@@ -37,9 +37,9 @@
                 value="{{ old('email', $user->email) }}" required autocomplete="username" />
 
             @error('email')
-                <span class="alert alert-danger mt-2" role="alert">
-                    <strong>{{ $errors->get('email') }}</strong>
-                </span>
+                <div class="alert alert-danger mt-2" role="alert">
+                    <strong>{{ $message }}</strong>
+                </div>
             @enderror
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && !$user->hasVerifiedEmail())
