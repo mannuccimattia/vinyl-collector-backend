@@ -11,3 +11,34 @@ body {
 .navbar-toggler {
   scale: 0.8;
 }
+
+.dropdown-item.text-light:hover {
+  color: black !important;
+}
+
+.card.dark,
+.form-control.dark,
+.form-check-input.dark {
+  background-color: transparent;
+}
+
+.card-header.dark {
+  background-color: #474d52;
+}
+
+.card.dark,
+.card-header.dark,
+.form-control.dark,
+.form-check-input.dark {
+  color: #f8f9fa;
+  border-color: #474d52;
+}
+
+.narrow {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.input-group-text {
+  min-width: 140px;
+}
