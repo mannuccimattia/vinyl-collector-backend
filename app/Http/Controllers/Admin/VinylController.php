@@ -37,9 +37,9 @@ class VinylController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Vinyl $vinyl)
     {
-        //
+        return view("vinyls.show", compact("vinyl"));
     }
 
     /**

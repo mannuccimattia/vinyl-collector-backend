@@ -11,7 +11,7 @@
 
             @foreach ($vinyls as $vinyl)
                 <div class="col-12">
-                    <div class="card dark card-link flex-row gap-3 h-100">
+                    <a href="{{ route('vinyls.show', $vinyl->id) }}" class="card dark card-link flex-row gap-3 h-100">
                         <img src="{{ Vite::asset('resources/img/logo/vinylcollector-black-disc.png') }}" alt=""
                             class="img-fluid vinyl-card-img rounded-start">
                         <div class="wrapper d-flex flex-column py-2 justify-content-around flex-fill">
@@ -29,7 +29,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             @endforeach
         </div>
