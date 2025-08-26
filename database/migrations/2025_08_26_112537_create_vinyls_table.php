@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string("title", 100);
             $table->string("artist", 100);
             $table->string("country", 50);
-            $table->date("release_date");
+            $table->year("release_year");
             $table->string("catalog_number", 20);
 
             $table->timestamps();

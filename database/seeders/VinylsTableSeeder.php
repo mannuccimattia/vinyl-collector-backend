@@ -22,7 +22,7 @@ class VinylsTableSeeder extends Seeder
             $newVinyl->title = $faker->sentence(3);
             $newVinyl->artist = $faker->name();
             $newVinyl->country = $faker->country();
-            $newVinyl->release_date = $faker->date("Y-m-d");
+            $newVinyl->release_year = $faker->year();
             $newVinyl->catalog_number = $faker->randomNumber(6, true);
 
             $newVinyl->save();

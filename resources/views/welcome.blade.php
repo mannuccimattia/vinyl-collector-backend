@@ -9,7 +9,7 @@
         <div class="row my-4 text-light flex-column gap-3">
             <h1> Title </h1>
             <div class="col-5">
-                <a href="" class="card dark rounded-pill border-black text-decoration-none">
+                <a href="{{ route('vinyls.index') }}" class="card dark rounded-pill border-black text-decoration-none">
                     <div class="card-content d-flex align-items-center justify-content-between">
                         <img class="img-fluid card-image"
                             src="{{ Vite::asset('resources/img/logo/vinylcollector-black-disc.png') }}" alt="">
@@ -37,4 +37,7 @@
                     </div>
                 </a>
             </div>
-        @endsection
+
+        </div>
+    </div>
+@endsection

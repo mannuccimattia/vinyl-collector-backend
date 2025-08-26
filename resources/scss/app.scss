@@ -57,6 +57,21 @@ body {
   min-height: 1.2em;
 }
 
-.card-image {
+.vinyl-card-img {
+  width: 180px;
+  aspect-ratio: 1/1;
+}
+
+.vinyl-card-label {
+  display: inline-block;
   width: 80px;
+}
+
+.card-link {
+  transition: 0.3s;
+}
+
+.card-link:hover {
+  scale: 1.02;
+  cursor: pointer;
 }
