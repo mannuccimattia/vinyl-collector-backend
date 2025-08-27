@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Label;
 use App\Models\Vinyl;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,9 @@ class VinylController extends Controller
      */
     public function create()
     {
-        return view("vinyls.create");
+        $labels = Label::all();
+
+        return view("vinyls.create", compact("labels"));
     }
 
     /**
@@ -38,6 +41,7 @@ class VinylController extends Controller
         $newVinyl->title = $data['title'];
         $newVinyl->artist = $data['artist'];
         $newVinyl->country = $data['country'];
+        $newVinyl->label_id  = $data['label_id'];
         $newVinyl->release_year = $data['release_year'];
         $newVinyl->catalog_number = $data['catalog_number'];
 
@@ -59,7 +63,9 @@ class VinylController extends Controller
      */
     public function edit(Vinyl $vinyl)
     {
-        return view("vinyls.edit", compact("vinyl"));
+        $labels = Label::all();
+
+        return view("vinyls.edit", compact("vinyl", "labels"));
     }
 
     /**
@@ -72,6 +78,7 @@ class VinylController extends Controller
         $vinyl->title = $data['title'];
         $vinyl->artist = $data['artist'];
         $vinyl->country = $data['country'];
+        $vinyl->label_id = $data['label_id'];
         $vinyl->release_year = $data['release_year'];
         $vinyl->catalog_number = $data['catalog_number'];
 

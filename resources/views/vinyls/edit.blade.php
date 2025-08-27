@@ -31,6 +31,18 @@
                 </div>
 
                 <div class="input-group mb-3">
+                    <label for="label_id" class="input-group-text dark">Label</label>
+                    <select name="label_id" id="label_id" class="form-select dark" aria-label="select label for vinyl">
+                        <option value="0" selected disabled>Select a label...</option>
+                        @foreach ($labels as $label)
+                            <option value="{{ $label->id }}" {{ $vinyl->label_id == $label->id ? 'selected' : '' }}>
+                                {{ $label->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="input-group mb-3">
                     <label for="release_year" class="input-group-text dark">Year</label>
                     <input type="number" class="form-control dark" name="release_year" id="release_year" min="1901"
                         max="2155" value="{{ $vinyl->release_year }}">
@@ -44,7 +56,7 @@
 
                 <div class="d-flex gap-3">
                     <input class="btn btn-outline-primary" type="submit" value="Save">
-                    <a href="{{ route('vinyls.index') }}" class="btn btn-outline-danger">Back</a>
+                    <a href="{{ route('vinyls.show', $vinyl) }}" class="btn btn-outline-danger">Back</a>
                 </div>
             </form>
         </div>

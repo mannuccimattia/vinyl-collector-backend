@@ -19,7 +19,8 @@ body {
 .card.dark,
 .form-control.dark,
 .form-check-input.dark,
-.input-group-text.dark {
+.input-group-text.dark,
+.form-select.dark {
   background-color: transparent;
 }
 
@@ -31,9 +32,20 @@ body {
 .card-header.dark,
 .form-control.dark,
 .form-check-input.dark,
-.input-group-text.dark {
+.input-group-text.dark,
+.form-select.dark {
   color: #f8f9fa;
   border-color: #474d52;
+}
+
+.form-select.dark {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  appearance: none;
+
+  option {
+    background-color: rgb(43, 43, 43);
+    color: #f8f9fa;
+  }
 }
 
 .narrow {
