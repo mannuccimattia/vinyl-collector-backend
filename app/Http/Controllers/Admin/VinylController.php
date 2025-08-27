@@ -65,16 +65,28 @@ class VinylController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Vinyl $vinyl)
     {
-        //
+        $data = $request->all();
+
+        $vinyl->title = $data['title'];
+        $vinyl->artist = $data['artist'];
+        $vinyl->country = $data['country'];
+        $vinyl->release_year = $data['release_year'];
+        $vinyl->catalog_number = $data['catalog_number'];
+
+        $vinyl->update();
+
+        return redirect()->route("vinyls.show", $vinyl);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Vinyl $vinyl)
     {
-        //
+        $vinyl->delete();
+
+        return redirect()->route("vinyls.index");
     }
 }
