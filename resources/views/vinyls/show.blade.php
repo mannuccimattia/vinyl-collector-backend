@@ -33,7 +33,9 @@
                 <div class="d-flex mt-5 gap-3">
                     <a href="{{ route('vinyls.edit', $vinyl) }}" class="btn btn-outline-warning">Edit</a>
                     <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                        data-bs-target="#deleteModal">Delete</button>
+                        data-bs-target="#deleteModal">
+                        Delete
+                    </button>
                 </div>
 
                 <div class="mt-5">

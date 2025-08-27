@@ -19,7 +19,7 @@
             </div>
 
             <div class="col-5">
-                <a href="" class="card dark rounded-pill border-white text-decoration-none">
+                <a href="{{ route('labels.index') }}" class="card dark rounded-pill border-white text-decoration-none">
                     <div class="card-content d-flex align-items-center justify-content-between">
                         <img class="img-fluid welcome-card-image"
                             src="{{ Vite::asset('resources/img/logo/vinylcollector-white-disc.png') }}" alt="">

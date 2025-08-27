@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\LabelController;
 use App\Http\Controllers\Admin\VinylController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,10 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource("vinyls", VinylController::class)
+    ->middleware(["auth", "verified"])
+;
+
+Route::resource("labels", LabelController::class)
     ->middleware(["auth", "verified"])
 ;
 
