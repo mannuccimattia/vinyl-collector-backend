@@ -23,7 +23,7 @@ class VinylController extends Controller
      */
     public function create()
     {
-        //
+        return view("vinyls.create");
     }
 
     /**

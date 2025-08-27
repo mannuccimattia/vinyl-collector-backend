@@ -18,7 +18,8 @@ body {
 
 .card.dark,
 .form-control.dark,
-.form-check-input.dark {
+.form-check-input.dark,
+.input-group-text.dark {
   background-color: transparent;
 }
 
@@ -29,7 +30,8 @@ body {
 .card.dark,
 .card-header.dark,
 .form-control.dark,
-.form-check-input.dark {
+.form-check-input.dark,
+.input-group-text.dark {
   color: #f8f9fa;
   border-color: #474d52;
 }
@@ -78,4 +80,14 @@ body {
 .card-link:hover {
   scale: 1.02;
   cursor: pointer;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  appearance: textfield;
 }
