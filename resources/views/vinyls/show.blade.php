@@ -30,6 +30,11 @@
                     <span class="vinyl-card-label">Catalog #:</span>{{ $vinyl->catalog_number }}
                 </div>
 
+                <div class="d-flex mt-5 gap-3">
+                    <a href="{{ route('vinyls.edit', $vinyl) }}" class="btn btn-outline-warning">Edit</a>
+                    <a href="" class="btn btn-outline-danger">Delete</a>
+                </div>
+
                 <div class="mt-5">
                     <a href="{{ route('vinyls.index') }}">Go back ↺</a>
                 </div>
