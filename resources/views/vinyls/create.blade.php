@@ -9,7 +9,7 @@
         <div class="row my-4 text-light gap-3">
             <h2>Add a new vinyl</h2>
 
-            <form action="" method="POST">
+            <form action="{{ route('vinyls.store') }}" method="POST">
                 @csrf
 
                 <div class="input-group mb-3">

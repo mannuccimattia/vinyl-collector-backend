@@ -31,7 +31,19 @@ class VinylController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $newVinyl = new Vinyl();
+
+        $newVinyl->title = $data['title'];
+        $newVinyl->artist = $data['artist'];
+        $newVinyl->country = $data['country'];
+        $newVinyl->release_year = $data['release_year'];
+        $newVinyl->catalog_number = $data['catalog_number'];
+
+        $newVinyl->save();
+
+        return redirect()->route("vinyls.show", $newVinyl);
     }
 
     /**
