@@ -24,6 +24,7 @@ class VinylsTableSeeder extends Seeder
             $newVinyl->country = $faker->country();
             $newVinyl->release_year = $faker->year();
             $newVinyl->catalog_number = $faker->randomNumber(6, true);
+            $newVinyl->label_id = $faker->numberBetween(1, 10);
 
             $newVinyl->save();
         }

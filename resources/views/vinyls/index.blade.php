@@ -31,7 +31,7 @@
                                 </div>
                                 <div><span class="vinyl-card-label">Genre:</span>{{ 'Random Genre' }}
                                 </div>
-                                <div><span class="vinyl-card-label">Label:</span>{{ 'Random Label' }}
+                                <div><span class="vinyl-card-label">Label:</span>{{ $vinyl->label->name }}
                                 </div>
                             </div>
                         </div>

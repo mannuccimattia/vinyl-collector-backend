@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     {
 
         $this->call([
+            LabelsTableSeeder::class,
             VinylsTableSeeder::class
         ]);
     }
