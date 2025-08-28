@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="d-flex gap-2">
-                    <input class="btn btn-outline-primary" type="submit" value="Save" required>
+                    <input class="btn btn-outline-primary" type="submit" value="Save">
                     <a href="{{ route('vinyls.index') }}" class="btn btn-outline-danger">Back</a>
                 </div>
             </form>

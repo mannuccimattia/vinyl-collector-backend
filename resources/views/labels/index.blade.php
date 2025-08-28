@@ -6,12 +6,27 @@
 
 @section('content')
     <div class="container narrow">
+
+        @if (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show my-3" role="alert">
+                {!! session('error') !!}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show my-3" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         <div class="row my-4 text-light gap-3 align-items-center">
             <div class="col-5">
                 <h2>Labels</h2>
             </div>
             <div class="col-6 text-end">
-                <a href="{{ route('vinyls.create') }}">Add new label</a>
+                <a href="{{ route('labels.create') }}">Add new label</a>
             </div>
             @foreach ($labels as $label)
                 <div class="col-12">
@@ -21,16 +36,17 @@
                         </div>
 
                         <div class="labels-wrapper pe-1">
-                            <a href="" class="btn btn-sm btn-outline-warning">Edit</a>
+                            <a href="{{ route('labels.edit', $label) }}" class="btn btn-sm btn-outline-warning">Edit</a>
                             <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
                                 data-bs-target="#deleteModal">
                                 Delete
                             </button>
                         </div>
-
                     </div>
                 </div>
             @endforeach
         </div>
     </div>
+
+    <x-delete-modal action="{{ route('labels.destroy', $label) }}" />
 @endsection
