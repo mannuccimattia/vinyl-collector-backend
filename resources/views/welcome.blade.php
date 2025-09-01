@@ -6,35 +6,22 @@
 
 @section('content')
     <div class="container">
-        <div class="row my-4 text-light flex-column gap-3">
-            <h1> Title </h1>
-            <div class="col-5">
-                <a href="{{ route('vinyls.index') }}" class="card dark rounded-pill border-black text-decoration-none">
-                    <div class="card-content d-flex align-items-center justify-content-between">
-                        <img class="img-fluid welcome-card-image"
-                            src="{{ Vite::asset('resources/img/logo/vinylcollector-black-disc.png') }}" alt="">
-                        <h3 class="pe-3">Vinyls</h3>
-                    </div>
+        <div class="row my-4 py-4 text-light gap-3 justify-content-between">
+            <div class="col-12 col-xl-auto">
+                <a class="card text-decoration-none border-0 welcome-card vinyls">
+                    <h3 class="text-light bottom-corner">Vinyls</h3>
                 </a>
             </div>
 
-            <div class="col-5">
-                <a href="{{ route('labels.index') }}" class="card dark rounded-pill border-white text-decoration-none">
-                    <div class="card-content d-flex align-items-center justify-content-between">
-                        <img class="img-fluid welcome-card-image"
-                            src="{{ Vite::asset('resources/img/logo/vinylcollector-white-disc.png') }}" alt="">
-                        <h3 class="pe-3">Labels</h3>
-                    </div>
+            <div class="col-12 col-xl-auto">
+                <a class="card text-decoration-none border-0 welcome-card labels">
+                    <h3 class="text-light bottom-corner">Labels</h3>
                 </a>
             </div>
 
-            <div class="col-5">
-                <a href="{{ route('genres.index') }}" class="card dark rounded-pill border-black text-decoration-none">
-                    <div class="card-content d-flex align-items-center justify-content-between">
-                        <img class="img-fluid welcome-card-image"
-                            src="{{ Vite::asset('resources/img/logo/vinylcollector-black-disc.png') }}" alt="">
-                        <h3 class="pe-3">Genres</h3>
-                    </div>
+            <div class="col-12 col-xl-auto">
+                <a class="card text-decoration-none border-0 welcome-card genres">
+                    <h3 class="text-light bottom-corner">Genres</h3>
                 </a>
             </div>
 

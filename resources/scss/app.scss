@@ -1,5 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
 
+:root {
+  --vinyls-bg: url("../img/welcome/vinyls.jpg");
+  --labels-bg: url("../img/welcome/labels.jpg");
+  --genres-bg: url("../img/welcome/genres.jpg");
+}
+
 body {
   background-color: rgb(43, 43, 43);
 }
@@ -46,6 +52,43 @@ body {
     background-color: rgb(43, 43, 43);
     color: #f8f9fa;
   }
+}
+
+.welcome-card {
+  width: 300px;
+  aspect-ratio: 16/9;
+  background:
+    linear-gradient(-30deg,
+      #000000 28%,
+      rgba(0, 0, 0, 0.6) 35%,
+      rgba(0, 0, 0, 0.2) 45%,
+      transparent 60%),
+    var(--card-bg);
+  background-size: cover;
+  transition: 0.3s ease;
+  position: relative;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.welcome-card.vinyls {
+  --card-bg: var(--vinyls-bg);
+}
+
+.welcome-card.labels {
+  --card-bg: var(--labels-bg);
+}
+
+.welcome-card.genres {
+  --card-bg: var(--genres-bg);
+}
+
+.bottom-corner {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1rem;
 }
 
 .narrow {
