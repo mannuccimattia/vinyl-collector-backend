@@ -65,7 +65,9 @@ body {
       transparent 60%),
     var(--card-bg);
   background-size: cover;
-  transition: 0.3s ease;
+  transition: transform 0.3s ease;
+  transform: scale(1);
+  will-change: transform;
   position: relative;
 
   &:hover {
