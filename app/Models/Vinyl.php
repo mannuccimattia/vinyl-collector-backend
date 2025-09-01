@@ -10,4 +10,9 @@ class Vinyl extends Model
     {
         return $this->belongsTo(Label::class);
     }
+
+    public function genres()
+    {
+        return $this->belongsToMany(Genre::class);
+    }
 }

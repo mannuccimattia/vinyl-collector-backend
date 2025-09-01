@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     {
 
         $this->call([
+            GenresTableSeeder::class,
             LabelsTableSeeder::class,
             VinylsTableSeeder::class
         ]);
