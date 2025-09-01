@@ -13,21 +13,32 @@
             <div class="col-12 col-lg-8 ps-3">
                 <h4 class="mb-5">{{ $vinyl->title }} - {{ $vinyl->artist }}</h4>
 
-                <div>
-                    <span class="vinyl-card-label">Year:</span>{{ $vinyl->release_year }}
+                <div class="d-flex">
+                    <span class="vinyl-card-label">Year:</span>
+                    <span>{{ $vinyl->release_year }}</span>
                 </div>
-                <div>
-                    <span class="vinyl-card-label">Genre:</span>{{ 'Random Genre' }}
+                <div class="d-flex">
+                    <span class="vinyl-card-label">Genre:</span>
+                    <span>
+                        @if ($vinyl->genres->count() > 0)
+                            {{ $vinyl->genres->pluck('name')->join(', ') }}
+                        @else
+                            N/A
+                        @endif
+                    </span>
                 </div>
-                <div>
-                    <span class="vinyl-card-label">Label:</span>{{ $vinyl->label->name }}
+                <div class="d-flex">
+                    <span class="vinyl-card-label">Label:</span>
+                    <span>{{ $vinyl->label->name }}</span>
                 </div>
 
-                <div class="mt-5">
-                    <span class="vinyl-card-label">Country:</span>{{ $vinyl->country }}
+                <div class="mt-5 d-flex">
+                    <span class="vinyl-card-label">Country:</span>
+                    <span>{{ $vinyl->country }}</span>
                 </div>
-                <div>
-                    <span class="vinyl-card-label">Catalog #:</span>{{ $vinyl->catalog_number }}
+                <div class="d-flex">
+                    <span class="vinyl-card-label">Catalog #:</span>
+                    <span>{{ $vinyl->catalog_number }}</span>
                 </div>
 
                 <div class="d-flex mt-5 gap-3">

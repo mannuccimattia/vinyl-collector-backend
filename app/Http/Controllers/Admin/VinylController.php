@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Genre;
 use App\Models\Label;
 use App\Models\Vinyl;
 use Illuminate\Http\Request;
@@ -25,8 +26,9 @@ class VinylController extends Controller
     public function create()
     {
         $labels = Label::all();
+        $genres = Genre::all();
 
-        return view("vinyls.create", compact("labels"));
+        return view("vinyls.create", compact("labels", "genres"));
     }
 
     /**
@@ -47,6 +49,10 @@ class VinylController extends Controller
 
         $newVinyl->save();
 
+        if ($request->has("genres")) {
+            $newVinyl->genres()->attach($data['genres']);
+        }
+
         return redirect()->route("vinyls.show", $newVinyl);
     }
 
@@ -64,8 +70,9 @@ class VinylController extends Controller
     public function edit(Vinyl $vinyl)
     {
         $labels = Label::all();
+        $genres = Genre::all();
 
-        return view("vinyls.edit", compact("vinyl", "labels"));
+        return view("vinyls.edit", compact("vinyl", "labels", "genres"));
     }
 
     /**
@@ -83,6 +90,12 @@ class VinylController extends Controller
         $vinyl->catalog_number = $data['catalog_number'];
 
         $vinyl->update();
+
+        if ($request->has("genres")) {
+            $vinyl->genres()->sync($data['genres']);
+        } else {
+            $vinyl->genres()->detach();
+        }
 
         return redirect()->route("vinyls.show", $vinyl);
     }

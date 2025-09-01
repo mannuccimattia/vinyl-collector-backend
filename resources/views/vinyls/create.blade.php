@@ -38,6 +38,20 @@
                 </div>
 
                 <div class="input-group mb-3">
+                    <label class="input-group-text dark" for="genres_id">Genres</label>
+                    <div class="form-control dark d-flex flex-wrap row-cols-3">
+                        @foreach ($genres as $genre)
+                            <div class="col">
+                                <input type="checkbox" name="genres[]" value="{{ $genre->id }}" id="{{ $genre->id }}">
+                                <small>
+                                    <label for="{{ $genre->id }}">{{ $genre->name }}</label>
+                                </small>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="input-group mb-3">
                     <label for="release_year" class="input-group-text dark">Year</label>
                     <input type="number" class="form-control dark" name="release_year" id="release_year"
                         min="1901 required" max="2155">
