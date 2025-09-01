@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\GenreController;
 use App\Http\Controllers\Admin\LabelController;
 use App\Http\Controllers\Admin\VinylController;
 use App\Http\Controllers\ProfileController;
@@ -24,6 +25,10 @@ Route::resource("vinyls", VinylController::class)
 ;
 
 Route::resource("labels", LabelController::class)
+    ->middleware(["auth", "verified"])
+;
+
+Route::resource("genres", GenreController::class)
     ->middleware(["auth", "verified"])
 ;
 
