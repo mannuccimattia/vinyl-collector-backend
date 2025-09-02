@@ -9,7 +9,7 @@
         <div class="row my-4 text-light gap-3">
             <h2>Edit existing vinyl</h2>
 
-            <form action="{{ route('vinyls.update', $vinyl) }}" method="POST">
+            <form action="{{ route('vinyls.update', $vinyl) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
@@ -22,6 +22,13 @@
                     <label for="artist" class="input-group-text dark">Artist</label>
                     <input type="text" class="form-control dark" name="artist" id="artist"
                         value="{{ $vinyl->artist }}">
+                </div>
+
+                <div class="input-group mb-3 d-flex">
+                    <label for="cover" class="input-group-text dark">Cover</label>
+                    <input type="file" data-bs-theme="dark" class="form-control dark" name="cover" id="cover">
+                    <img src="{{ asset('storage/' . $vinyl->cover) }}" alt="cover of the album {{ $vinyl->title }}"
+                        class="ms-auto img-tooltip rounded-end">
                 </div>
 
                 <div class="input-group mb-3">

@@ -8,7 +8,9 @@
     <div class="container">
         <div class="row my-5 py-5 text-light">
             <div class="col-12 col-lg-4">
-                <img src="{{ Vite::asset('resources/img/logo/vinylcollector-black-disc.png') }}" alt="">
+                <img class="img-fluid mb-2"
+                    src="{{ $vinyl->cover ? asset('storage/' . $vinyl->cover) : Vite::asset('resources/img/logo/vinylcollector-black-disc.png') }}"
+                    alt="cover of the album {{ $vinyl->title }}">
             </div>
             <div class="col-12 col-lg-8 ps-3">
                 <h4 class="mb-5">{{ $vinyl->title }} - {{ $vinyl->artist }}</h4>

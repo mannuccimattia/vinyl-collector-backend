@@ -7,6 +7,8 @@ use App\Models\Genre;
 use App\Models\Label;
 use App\Models\Vinyl;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class VinylController extends Controller
 {
@@ -46,6 +48,12 @@ class VinylController extends Controller
         $newVinyl->label_id  = $data['label_id'];
         $newVinyl->release_year = $data['release_year'];
         $newVinyl->catalog_number = $data['catalog_number'];
+
+        if (array_key_exists("cover", $data)) {
+            $img_url = Storage::putFile("vinyls", $data['cover']);
+
+            $newVinyl->cover = $img_url;
+        }
 
         $newVinyl->save();
 
@@ -89,6 +97,14 @@ class VinylController extends Controller
         $vinyl->release_year = $data['release_year'];
         $vinyl->catalog_number = $data['catalog_number'];
 
+        if (array_key_exists("cover", $data)) {
+            Storage::delete($vinyl->cover);
+
+            $img_url = Storage::putFile("vinyls", $data['cover']);
+
+            $vinyl->cover = $img_url;
+        }
+
         $vinyl->update();
 
         if ($request->has("genres")) {
@@ -105,6 +121,12 @@ class VinylController extends Controller
      */
     public function destroy(Vinyl $vinyl)
     {
+        if ($vinyl->cover) {
+            Storage::delete($vinyl->cover);
+        }
+
+        $vinyl->genres()->detach();
+
         $vinyl->delete();
 
         return redirect()->route("vinyls.index");

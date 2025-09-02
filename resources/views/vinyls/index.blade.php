@@ -18,8 +18,8 @@
                 <div class="col-12">
                     <a href="{{ route('vinyls.show', $vinyl->id) }}"
                         class="card dark card-link flex-row gap-3 h-100 text-decoration-none">
-                        <img src="{{ Vite::asset('resources/img/logo/vinylcollector-black-disc.png') }}" alt=""
-                            class="img-fluid vinyl-card-img rounded-start">
+                        <img src="{{ $vinyl->cover ? asset('storage/' . $vinyl->cover) : Vite::asset('resources/img/logo/vinylcollector-black-disc.png') }}"
+                            alt="cover of the album {{ $vinyl->title }}" class="img-fluid vinyl-card-img rounded-start">
                         <div class="wrapper d-flex flex-column py-2 justify-content-around flex-fill">
                             <div>
                                 <h5>
