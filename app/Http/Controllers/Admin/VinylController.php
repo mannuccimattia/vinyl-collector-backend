@@ -48,6 +48,7 @@ class VinylController extends Controller
         $newVinyl->label_id  = $data['label_id'];
         $newVinyl->release_year = $data['release_year'];
         $newVinyl->catalog_number = $data['catalog_number'];
+        $newVinyl->release_num = $data['release_num'];
         $newVinyl->release_url = $data['release_url'];
 
         if (array_key_exists("cover", $data)) {
@@ -97,6 +98,7 @@ class VinylController extends Controller
         $vinyl->label_id = $data['label_id'];
         $vinyl->release_year = $data['release_year'];
         $vinyl->catalog_number = $data['catalog_number'];
+        $vinyl->release_num = $data['release_num'];
         $vinyl->release_url = $data['release_url'];
 
         if (array_key_exists("cover", $data)) {

@@ -14,14 +14,15 @@
                 @method('PUT')
 
                 <div class="input-group mb-3">
-                    <label for="title" class="input-group-text dark">Title</label>
-                    <input type="text" class="form-control dark" name="title" id="title" value="{{ $vinyl->title }}">
-                </div>
-
-                <div class="input-group mb-3">
                     <label for="artist" class="input-group-text dark">Artist</label>
                     <input type="text" class="form-control dark" name="artist" id="artist"
                         value="{{ $vinyl->artist }}">
+                </div>
+
+                <div class="input-group mb-3">
+                    <label for="title" class="input-group-text dark">Title</label>
+                    <input type="text" class="form-control dark" name="title" id="title"
+                        value="{{ $vinyl->title }}">
                 </div>
 
                 <div class="input-group mb-3 d-flex">
@@ -76,6 +77,12 @@
                     <label for="catalog_number" class="input-group-text dark">Catalog</label>
                     <input type="text" class="form-control dark" name="catalog_number" id="catalog_number"
                         value="{{ $vinyl->catalog_number }}">
+                </div>
+
+                <div class="input-group mb-4">
+                    <label for="release_num" class="input-group-text dark">Release N°</label>
+                    <input type="text" class="form-control dark" name="release_num" id="release_num"
+                        value="{{ $vinyl->release_num }}">
                 </div>
 
                 <div class="input-group mb-4">

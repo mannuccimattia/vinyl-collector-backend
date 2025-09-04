@@ -13,13 +13,13 @@
                 @csrf
 
                 <div class="input-group mb-3">
-                    <label for="title" class="input-group-text dark">Title</label>
-                    <input type="text" class="form-control dark" name="title" id="title" required>
+                    <label for="artist" class="input-group-text dark">Artist</label>
+                    <input type="text" class="form-control dark" name="artist" id="artist" required>
                 </div>
 
                 <div class="input-group mb-3">
-                    <label for="artist" class="input-group-text dark">Artist</label>
-                    <input type="text" class="form-control dark" name="artist" id="artist" required>
+                    <label for="title" class="input-group-text dark">Title</label>
+                    <input type="text" class="form-control dark" name="title" id="title" required>
                 </div>
 
                 <div class="input-group mb-3">
@@ -66,6 +66,11 @@
                 <div class="input-group mb-3">
                     <label for="catalog_number" class="input-group-text dark">Catalog</label>
                     <input type="text" class="form-control dark" name="catalog_number" id="catalog_number" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <label for="release_num" class="input-group-text dark">Release N°</label>
+                    <input type="text" class="form-control dark" name="release_num" id="release_num" required>
                 </div>
 
                 <div class="input-group mb-3">
