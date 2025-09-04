@@ -13,7 +13,7 @@ class LabelController extends Controller
      */
     public function index()
     {
-        $labels = Label::all();
+        $labels = Label::orderBy("name")->get();
 
         return view("labels.index", compact("labels"));
     }

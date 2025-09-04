@@ -29,8 +29,8 @@ class VinylController extends Controller
      */
     public function create()
     {
-        $labels = Label::all();
-        $genres = Genre::all();
+        $labels = Label::orderBy('name')->get();
+        $genres = Genre::orderBy('name')->get();
 
         return view("vinyls.create", compact("labels", "genres"));
     }
@@ -81,8 +81,8 @@ class VinylController extends Controller
      */
     public function edit(Vinyl $vinyl)
     {
-        $labels = Label::all();
-        $genres = Genre::all();
+        $labels = Label::orderBy('name')->get();
+        $genres = Genre::orderBy('name')->get();
 
         return view("vinyls.edit", compact("vinyl", "labels", "genres"));
     }
