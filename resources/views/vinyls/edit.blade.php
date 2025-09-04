@@ -27,8 +27,10 @@
                 <div class="input-group mb-3 d-flex">
                     <label for="cover" class="input-group-text dark">Cover</label>
                     <input type="file" data-bs-theme="dark" class="form-control dark" name="cover" id="cover">
-                    <img src="{{ asset('storage/' . $vinyl->cover) }}" alt="cover of the album {{ $vinyl->title }}"
-                        class="ms-auto img-tooltip rounded-end">
+                    @if ($vinyl->cover)
+                        <img src="{{ asset('storage/' . $vinyl->cover) }}" alt="cover of the album {{ $vinyl->title }}"
+                            class="ms-auto img-tooltip rounded-end">
+                    @endif
                 </div>
 
                 <div class="input-group mb-3">
@@ -74,6 +76,12 @@
                     <label for="catalog_number" class="input-group-text dark">Catalog</label>
                     <input type="text" class="form-control dark" name="catalog_number" id="catalog_number"
                         value="{{ $vinyl->catalog_number }}">
+                </div>
+
+                <div class="input-group mb-4">
+                    <label for="release_url" class="input-group-text dark">Release URL</label>
+                    <input type="text" class="form-control dark" name="release_url" id="release_url"
+                        value="{{ $vinyl->release_url }}">
                 </div>
 
                 <div class="d-flex gap-3">

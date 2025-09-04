@@ -68,6 +68,11 @@
                     <input type="text" class="form-control dark" name="catalog_number" id="catalog_number" required>
                 </div>
 
+                <div class="input-group mb-3">
+                    <label for="release_url" class="input-group-text dark">Release URL</label>
+                    <input type="text" class="form-control dark" name="release_url" id="release_url" required>
+                </div>
+
                 <div class="d-flex gap-2">
                     <input class="btn btn-outline-primary" type="submit" value="Save">
                     <a href="{{ route('vinyls.index') }}" class="btn btn-outline-danger">Back</a>

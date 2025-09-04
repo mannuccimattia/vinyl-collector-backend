@@ -28,6 +28,10 @@
                             </div>
                             <div>
                                 <div class="d-flex">
+                                    <span class="vinyl-card-label">Label:</span>
+                                    <span>{{ $vinyl->label->name }}</span>
+                                </div>
+                                <div class="d-flex">
                                     <span class="vinyl-card-label">Year:</span>
                                     <span>{{ $vinyl->release_year }}</span>
                                 </div>
@@ -40,10 +44,6 @@
                                             N/A
                                         @endif
                                     </span>
-                                </div>
-                                <div class="d-flex">
-                                    <span class="vinyl-card-label">Label:</span>
-                                    <span>{{ $vinyl->label->name }}</span>
                                 </div>
                             </div>
                         </div>

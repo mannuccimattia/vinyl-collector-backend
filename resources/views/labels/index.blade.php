@@ -32,7 +32,7 @@
                 <div class="col-12">
                     <div class="card dark flex-row align-items-center justify-content-between">
                         <div class="p-2">
-                            {{ $label->id . ' - ' . $label->name }}
+                            {{ $label->name }}
                         </div>
 
                         <div class="labels-wrapper pe-1">

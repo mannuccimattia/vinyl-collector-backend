@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row my-5 py-5 text-light">
+        <div class="row my-5 text-light">
             <div class="col-12 col-lg-4">
                 <img class="img-fluid mb-2"
                     src="{{ $vinyl->cover ? asset('storage/' . $vinyl->cover) : Vite::asset('resources/img/logo/vinylcollector-black-disc.png') }}"
@@ -34,13 +34,17 @@
                     <span>{{ $vinyl->label->name }}</span>
                 </div>
 
-                <div class="mt-5 d-flex">
+                <div class="mt-4 d-flex">
                     <span class="vinyl-card-label">Country:</span>
                     <span>{{ $vinyl->country }}</span>
                 </div>
                 <div class="d-flex">
-                    <span class="vinyl-card-label">Catalog #:</span>
+                    <span class="vinyl-card-label">Catalog:</span>
                     <span>{{ $vinyl->catalog_number }}</span>
+                </div>
+                <div class="d-flex">
+                    <span class="vinyl-card-label">Release:</span>
+                    <span><a href="{{ $vinyl->release_url }}" target="_blank">Additional release info</a></span>
                 </div>
 
                 <div class="d-flex mt-5 gap-3">
