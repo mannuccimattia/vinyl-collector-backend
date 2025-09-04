@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('vinyls', function (Blueprint $table) {
             $table->id();
 
-            $table->string("title", 100);
-            $table->string("artist", 100);
-            $table->string("country", 50);
+            $table->string("title");
+            $table->string("artist");
+            $table->string("country");
             $table->year("release_year");
-            $table->string("catalog_number", 20);
+            $table->string("catalog_number");
 
             $table->timestamps();
         });
