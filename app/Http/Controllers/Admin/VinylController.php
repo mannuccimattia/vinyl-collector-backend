@@ -17,7 +17,9 @@ class VinylController extends Controller
      */
     public function index()
     {
-        $vinyls = Vinyl::all();
+        $vinyls = Vinyl::orderBy('artist')
+            ->orderBy('title')
+            ->get();
 
         return view("vinyls.index", compact("vinyls"));
     }

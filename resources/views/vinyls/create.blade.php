@@ -24,7 +24,8 @@
 
                 <div class="input-group mb-3">
                     <label for="cover" class="input-group-text dark">Cover</label>
-                    <input type="file" data-bs-theme="dark" class="form-control dark" name="cover" id="cover">
+                    <input type="file" data-bs-theme="dark" class="form-control dark" name="cover" id="cover"
+                        required>
                 </div>
 
                 <div class="input-group mb-3">

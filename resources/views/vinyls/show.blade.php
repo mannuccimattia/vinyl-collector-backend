@@ -13,14 +13,14 @@
                     alt="cover of the album {{ $vinyl->title }}">
             </div>
             <div class="col-12 col-lg-8 ps-3">
-                <h4 class="mb-4">{{ $vinyl->title }} - {{ $vinyl->artist }}</h4>
+                <h4 class="mb-4">{{ $vinyl->artist }} - {{ $vinyl->title }}</h4>
 
                 <div class="d-flex">
                     <span class="vinyl-card-label">Year:</span>
                     <span>{{ $vinyl->release_year }}</span>
                 </div>
                 <div class="d-flex">
-                    <span class="vinyl-card-label">Genre:</span>
+                    <span class="vinyl-card-label">Genres:</span>
                     <span>
                         @if ($vinyl->genres->count() > 0)
                             {{ $vinyl->genres->pluck('name')->join(', ') }}

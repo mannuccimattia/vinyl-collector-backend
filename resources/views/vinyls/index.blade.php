@@ -23,7 +23,7 @@
                         <div class="wrapper d-flex flex-column py-2 justify-content-around flex-fill">
                             <div>
                                 <h5>
-                                    {{ $vinyl->title }} - {{ $vinyl->artist }}
+                                    {{ $vinyl->artist }} - {{ $vinyl->title }}
                                 </h5>
                             </div>
                             <div>
@@ -36,7 +36,7 @@
                                     <span>{{ $vinyl->release_year }}</span>
                                 </div>
                                 <div class="d-flex">
-                                    <span class="vinyl-card-label">Genre:</span>
+                                    <span class="vinyl-card-label">Genres:</span>
                                     <span>
                                         @if ($vinyl->genres->count() > 0)
                                             {{ $vinyl->genres->pluck('name')->join(', ') }}
