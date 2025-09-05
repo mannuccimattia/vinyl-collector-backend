@@ -21,8 +21,8 @@
             </div>
         @endif
 
-        <div class="row my-4 text-light gap-3 align-items-center">
-            <div class="col-5">
+        <div class="row my-4 text-light row-gap-3 align-items-center">
+            <div class="col-6">
                 <h2>Genres</h2>
             </div>
             <div class="col-6 text-end">

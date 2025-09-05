@@ -6,14 +6,15 @@
 
 @section('content')
     <div class="container">
-        <div class="row my-4 text-light gap-3 align-items-center">
-            <div class="col-5">
+        <div class="row my-4 text-light row-gap-3 align-items-center">
+            <div class="col-6">
                 <h2>My collection</h2>
             </div>
             <div class="col-6 text-end">
-                <a href="{{ route('vinyls.create') }}">Add new vinyl</a>
+                <a href="{{ route('vinyls.create') }}" class="btn btn-sm btn-outline-primary">Add new vinyl</a>
             </div>
 
+            {{ $vinyls->links() }}
             @foreach ($vinyls as $vinyl)
                 <div class="col-12">
                     <a href="{{ route('vinyls.show', $vinyl->id) }}"
@@ -50,6 +51,7 @@
                     </a>
                 </div>
             @endforeach
+            {{ $vinyls->links() }}
         </div>
     </div>
 @endsection

@@ -159,3 +159,35 @@ input[type=number] {
 .img-tooltip {
   height: 4rem;
 }
+
+.pagination {
+  --bs-pagination-color: #fff;
+  --bs-pagination-bg: transparent;
+  --bs-pagination-border-color: #474d52;
+  --bs-pagination-hover-color: #fff;
+  --bs-pagination-hover-bg: #474d52;
+  --bs-pagination-hover-border-color: #373b3e;
+  --bs-pagination-active-color: #0d6efd;
+  --bs-pagination-active-bg: transparent;
+  --bs-pagination-active-border-color: #0d6efd;
+  --bs-pagination-disabled-color: #6c757d;
+  --bs-pagination-disabled-bg: #212529;
+  --bs-pagination-disabled-border-color: #373b3e;
+}
+
+@media (max-width:399.98px) {
+  .card.dark h5 {
+    font-size: 1rem;
+    padding-right: 0.2rem;
+  }
+
+  .vinyl-card-label {
+    display: none;
+  }
+
+  .card.dark span {
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0;
+  }
+}

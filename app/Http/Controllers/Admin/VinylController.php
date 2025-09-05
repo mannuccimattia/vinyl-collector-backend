@@ -19,7 +19,8 @@ class VinylController extends Controller
     {
         $vinyls = Vinyl::orderBy('artist')
             ->orderBy('title')
-            ->get();
+            ->paginate(10);
+
 
         return view("vinyls.index", compact("vinyls"));
     }
