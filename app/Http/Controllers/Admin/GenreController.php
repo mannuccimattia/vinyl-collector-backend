@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Genre;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class GenreController extends Controller
 {
@@ -22,6 +23,9 @@ class GenreController extends Controller
      */
     public function create()
     {
+        if (!Gate::allows("admin")) {
+            abort(403);
+        }
         return view("genres.create");
     }
 
@@ -30,6 +34,10 @@ class GenreController extends Controller
      */
     public function store(Request $request)
     {
+        if (!Gate::allows("admin")) {
+            abort(403);
+        }
+
         $data = $request->all();
 
         $newGenre = new Genre();
@@ -46,7 +54,7 @@ class GenreController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // Route not needed.
     }
 
     /**
@@ -54,6 +62,10 @@ class GenreController extends Controller
      */
     public function edit(Genre $genre)
     {
+        if (!Gate::allows("admin")) {
+            abort(403);
+        }
+
         return view("genres.edit", compact("genre"));
     }
 
@@ -62,6 +74,10 @@ class GenreController extends Controller
      */
     public function update(Request $request, Genre $genre)
     {
+        if (!Gate::allows("admin")) {
+            abort(403);
+        }
+
         $data = $request->all();
 
         $genre->name = $data['name'];
@@ -76,6 +92,10 @@ class GenreController extends Controller
      */
     public function destroy(Genre $genre)
     {
+        if (!Gate::allows("admin")) {
+            abort(403);
+        }
+
         // If genre has associated vinyls,redirect to index and throw error modal
         if ($genre->vinyls()->count() > 0) {
             return redirect()->route('genres.index')

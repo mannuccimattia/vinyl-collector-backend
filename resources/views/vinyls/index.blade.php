@@ -10,9 +10,11 @@
             <div class="col-6">
                 <h2>My collection</h2>
             </div>
-            <div class="col-6 text-end">
-                <a href="{{ route('vinyls.create') }}" class="btn btn-sm btn-outline-primary">Add new vinyl</a>
-            </div>
+            @can('admin')
+                <div class="col-6 text-end">
+                    <a href="{{ route('vinyls.create') }}" class="btn btn-sm btn-outline-primary">Add new vinyl</a>
+                </div>
+            @endcan
 
             {{ $vinyls->links() }}
             @foreach ($vinyls as $vinyl)

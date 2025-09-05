@@ -48,13 +48,15 @@
                             class="text-decoration-none">[{{ $vinyl->release_num }}]</a></span>
                 </div>
 
-                <div class="d-flex mt-5 gap-3">
-                    <a href="{{ route('vinyls.edit', $vinyl) }}" class="btn btn-outline-warning">Edit</a>
-                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                        data-bs-target="#deleteModal">
-                        Delete
-                    </button>
-                </div>
+                @can('admin')
+                    <div class="d-flex mt-5 gap-3">
+                        <a href="{{ route('vinyls.edit', $vinyl) }}" class="btn btn-outline-warning">Edit</a>
+                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                            data-bs-target="#deleteModal">
+                            Delete
+                        </button>
+                    </div>
+                @endcan
 
                 <div class="mt-5">
                     <a href="{{ route('vinyls.index') }}" class="btn btn-outline-primary w-100 text-decoration-none">Go

@@ -25,9 +25,13 @@
             <div class="col-6">
                 <h2>Genres</h2>
             </div>
-            <div class="col-6 text-end">
-                <a href="{{ route('genres.create') }}">Add new genre</a>
-            </div>
+
+            @can('admin')
+                <div class="col-6 text-end">
+                    <a href="{{ route('genres.create') }}">Add new genre</a>
+                </div>
+            @endcan
+
             @foreach ($genres as $genre)
                 <div class="col-12">
                     <div class="card dark flex-row align-items-center justify-content-between">
@@ -35,18 +39,20 @@
                             {{ $genre->name }}
                         </div>
 
-                        <div class="labels-wrapper pe-1">
-                            <a href="{{ route('genres.edit', $genre) }}" class="btn btn-sm btn-outline-warning">Edit</a>
-                            <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
-                                data-bs-target="#deleteModal">
-                                Delete
-                            </button>
-                        </div>
+                        @can('admin')
+                            <div class="labels-wrapper pe-1">
+                                <a href="{{ route('genres.edit', $genre) }}" class="btn btn-sm btn-outline-warning">Edit</a>
+                                <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal">
+                                    Delete
+                                </button>
+                            </div>
+
+                            <x-delete-modal action="{{ route('genres.destroy', $genre) }}" />
+                        @endcan
                     </div>
                 </div>
             @endforeach
         </div>
     </div>
-
-    <x-delete-modal action="{{ route('genres.destroy', $genre) }}" />
 @endsection

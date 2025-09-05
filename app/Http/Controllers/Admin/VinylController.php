@@ -8,6 +8,7 @@ use App\Models\Label;
 use App\Models\Vinyl;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 
 class VinylController extends Controller
@@ -30,6 +31,9 @@ class VinylController extends Controller
      */
     public function create()
     {
+        if (!Gate::allows("admin")) {
+            abort(403);
+        }
         $labels = Label::orderBy('name')->get();
         $genres = Genre::orderBy('name')->get();
 
@@ -41,6 +45,10 @@ class VinylController extends Controller
      */
     public function store(Request $request)
     {
+        if (!Gate::allows("admin")) {
+            abort(403);
+        }
+
         $data = $request->all();
 
         $newVinyl = new Vinyl();
@@ -82,6 +90,10 @@ class VinylController extends Controller
      */
     public function edit(Vinyl $vinyl)
     {
+        if (!Gate::allows("admin")) {
+            abort(403);
+        }
+
         $labels = Label::orderBy('name')->get();
         $genres = Genre::orderBy('name')->get();
 
@@ -93,6 +105,10 @@ class VinylController extends Controller
      */
     public function update(Request $request, Vinyl $vinyl)
     {
+        if (!Gate::allows("admin")) {
+            abort(403);
+        }
+
         $data = $request->all();
 
         $vinyl->title = $data['title'];
@@ -128,6 +144,10 @@ class VinylController extends Controller
      */
     public function destroy(Vinyl $vinyl)
     {
+        if (!Gate::allows("admin")) {
+            abort(403);
+        }
+
         if ($vinyl->cover) {
             Storage::delete($vinyl->cover);
         }

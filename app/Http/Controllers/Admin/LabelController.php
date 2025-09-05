@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Label;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class LabelController extends Controller
 {
@@ -23,6 +24,10 @@ class LabelController extends Controller
      */
     public function create()
     {
+        if (!Gate::allows("admin")) {
+            abort(403);
+        }
+
         return view("labels.create");
     }
 
@@ -31,6 +36,10 @@ class LabelController extends Controller
      */
     public function store(Request $request)
     {
+        if (!Gate::allows("admin")) {
+            abort(403);
+        }
+
         $data = $request->all();
 
         $newLabel = new Label();
@@ -47,7 +56,7 @@ class LabelController extends Controller
      */
     public function show(Label $label)
     {
-        // return view("labels.show", compact("labels"));
+        // Route not needed.
     }
 
     /**
@@ -55,6 +64,10 @@ class LabelController extends Controller
      */
     public function edit(Label $label)
     {
+        if (!Gate::allows("admin")) {
+            abort(403);
+        }
+
         return view("labels.edit", compact("label"));
     }
 
@@ -63,6 +76,10 @@ class LabelController extends Controller
      */
     public function update(Request $request, Label $label)
     {
+        if (!Gate::allows("admin")) {
+            abort(403);
+        }
+
         $data = $request->all();
 
         $label->name = $data['name'];
@@ -77,6 +94,10 @@ class LabelController extends Controller
      */
     public function destroy(Label $label)
     {
+        if (!Gate::allows("admin")) {
+            abort(403);
+        }
+
         // If label has associated vinyls,redirect to index and throw error modal
         if ($label->vinyls()->count() > 0) {
             return redirect()->route('labels.index')

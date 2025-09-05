@@ -25,9 +25,13 @@
             <div class="col-6">
                 <h2>Labels</h2>
             </div>
-            <div class="col-6 text-end">
-                <a href="{{ route('labels.create') }}">Add new label</a>
-            </div>
+
+            @can('admin')
+                <div class="col-6 text-end">
+                    <a href="{{ route('labels.create') }}">Add new label</a>
+                </div>
+            @endcan
+
             @foreach ($labels as $label)
                 <div class="col-12">
                     <div class="card dark flex-row align-items-center justify-content-between">
@@ -35,18 +39,20 @@
                             {{ $label->name }}
                         </div>
 
-                        <div class="labels-wrapper pe-1">
-                            <a href="{{ route('labels.edit', $label) }}" class="btn btn-sm btn-outline-warning">Edit</a>
-                            <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
-                                data-bs-target="#deleteModal">
-                                Delete
-                            </button>
-                        </div>
+                        @can('admin')
+                            <div class="labels-wrapper pe-1">
+                                <a href="{{ route('labels.edit', $label) }}" class="btn btn-sm btn-outline-warning">Edit</a>
+                                <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
+                                    data-bs-target="#deleteModal">
+                                    Delete
+                                </button>
+                            </div>
+
+                            <x-delete-modal action="{{ route('labels.destroy', $label) }}" />
+                        @endcan
                     </div>
                 </div>
             @endforeach
         </div>
     </div>
-
-    <x-delete-modal action="{{ route('labels.destroy', $label) }}" />
 @endsection
