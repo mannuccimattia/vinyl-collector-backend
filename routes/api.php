@@ -9,4 +9,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get("vinyls", [VinylController::class, 'index']);
 
-Route::get("vinyls/1", [VinylController::class, 'show']);
+Route::get("vinyls/{vinyl}", [VinylController::class, 'show']);
