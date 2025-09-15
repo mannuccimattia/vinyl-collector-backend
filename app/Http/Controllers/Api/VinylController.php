@@ -13,9 +13,10 @@ class VinylController extends Controller
      */
     public function index()
     {
-        $vinyls = Vinyl::orderBy("artist")
+        $vinyls = Vinyl::with("label", "genres")
+            ->orderBy("artist")
             ->orderBy("title")
-            ->get();
+            ->paginate(10);
 
         return response()->json(
             [
@@ -30,6 +31,8 @@ class VinylController extends Controller
      */
     public function show(Vinyl $vinyl)
     {
+        $vinyl->load("label", "genres");
+
         return response()->json(
             [
                 "success" => true,
