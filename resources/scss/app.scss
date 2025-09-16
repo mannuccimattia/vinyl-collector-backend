@@ -18,6 +18,10 @@ body {
   scale: 0.8;
 }
 
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
 .dropdown-item.text-light:hover {
   color: black !important;
 }
@@ -65,7 +69,9 @@ body {
       transparent 60%),
     var(--card-bg);
   background-size: cover;
-  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform: scale(1);
   will-change: transform;
   position: relative;

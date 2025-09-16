@@ -16,7 +16,11 @@ class VinylController extends Controller
         $vinyls = Vinyl::with("label", "genres")
             ->orderBy("artist")
             ->orderBy("title")
-            ->paginate(10);
+            ->paginate(12);
+
+        foreach ($vinyls as $vinyl) {
+            $vinyl->cover = "http://localhost:8000/storage/$vinyl->cover";
+        }
 
         return response()->json(
             [
@@ -32,6 +36,7 @@ class VinylController extends Controller
     public function show(Vinyl $vinyl)
     {
         $vinyl->load("label", "genres");
+        $vinyl->cover = "http://localhost:8000/storage/$vinyl->cover";
 
         return response()->json(
             [
