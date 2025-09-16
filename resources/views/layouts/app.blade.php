@@ -12,7 +12,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="shortcut icon" href="{{ Vite::asset('resources/img/favicon_mm.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ Vite::asset('resources/img/logo/vinylcollector-white-disc.png') }}"
+        type="image/x-icon">
     <title>@yield('title')</title>
 
 
