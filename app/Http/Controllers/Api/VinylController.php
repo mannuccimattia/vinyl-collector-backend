@@ -52,6 +52,8 @@ class VinylController extends Controller
     public function show(Vinyl $vinyl)
     {
         $vinyl->load("label", "genres");
+
+        // full cover path for frontend app
         $vinyl->cover = "http://localhost:8000/storage/$vinyl->cover";
 
         return response()->json(

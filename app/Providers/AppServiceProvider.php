@@ -22,6 +22,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Admin Gate: name and email must match .env
         Gate::define("admin", function (User $user) {
             return (
                 $user->name === env("APP_ADMIN_NAME") && $user->email === env("APP_ADMIN_MAIL")
