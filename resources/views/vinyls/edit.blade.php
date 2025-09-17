@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="container narrow">
-        <div class="row my-4 text-light gap-3">
+        <div class="row mt-3 mb-2 text-light gap-3">
             <h2>Edit existing vinyl</h2>
 
             <form action="{{ route('vinyls.update', $vinyl) }}" method="POST" enctype="multipart/form-data">
@@ -85,7 +85,7 @@
                         value="{{ $vinyl->release_num }}">
                 </div>
 
-                <div class="input-group mb-4">
+                <div class="input-group mb-3">
                     <label for="release_url" class="input-group-text dark">Release URL</label>
                     <input type="text" class="form-control dark" name="release_url" id="release_url"
                         value="{{ $vinyl->release_url }}">

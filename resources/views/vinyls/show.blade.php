@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row mt-5 mb-3 text-light">
+        <div class="row mt-5 pt-5 mb-3 text-light">
             <div class="col-12 col-lg-4">
                 <img class="img-fluid mb-2"
                     src="{{ $vinyl->cover ? asset('storage/' . $vinyl->cover) : Vite::asset('resources/img/logo/vinylcollector-black-disc.png') }}"
@@ -52,7 +52,7 @@
                     <div class="d-flex mt-5 gap-3">
                         <a href="{{ route('vinyls.edit', $vinyl) }}" class="btn btn-outline-warning">Edit</a>
                         <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                            data-bs-target="#deleteModal">
+                            data-bs-target="#deleteModal{{ $vinyl->id }}">
                             Delete
                         </button>
                     </div>
@@ -66,5 +66,5 @@
         </div>
     </div>
 
-    <x-delete-modal action="{{ route('vinyls.destroy', $vinyl) }}" />
+    <x-delete-modal :id="$vinyl->id" action="{{ route('vinyls.destroy', $vinyl) }}" />
 @endsection

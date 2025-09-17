@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="container narrow">
-        <div class="row my-4 text-light gap-3">
+        <div class="row my-3 text-light gap-3">
             <h2>Add a new vinyl</h2>
 
             <form action="{{ route('vinyls.store') }}" method="POST" enctype="multipart/form-data">

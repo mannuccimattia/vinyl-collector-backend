@@ -43,12 +43,12 @@
                             <div class="labels-wrapper pe-1">
                                 <a href="{{ route('genres.edit', $genre) }}" class="btn btn-sm btn-outline-warning">Edit</a>
                                 <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
-                                    data-bs-target="#deleteModal">
+                                    data-bs-target="#deleteModal{{ $genre->id }}">
                                     Delete
                                 </button>
                             </div>
 
-                            <x-delete-modal action="{{ route('genres.destroy', $genre) }}" />
+                            <x-delete-modal :id="$genre->id" action="{{ route('genres.destroy', $genre) }}" />
                         @endcan
                     </div>
                 </div>

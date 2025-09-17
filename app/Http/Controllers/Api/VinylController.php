@@ -11,6 +11,22 @@ class VinylController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    // Unordered and unpaginated
+    public function indexRaw()
+    {
+        $vinyls = Vinyl::with("label", "genres")
+            ->get();
+
+        return response()->json(
+            [
+                "success" => true,
+                "data" => $vinyls
+            ]
+        );
+    }
+
+    // Ordered by artist->title and paginated
     public function index()
     {
         $vinyls = Vinyl::with("label", "genres")
