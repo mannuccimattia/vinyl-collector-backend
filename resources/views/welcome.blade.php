@@ -6,10 +6,10 @@
 
 @section('content')
     <div class="container">
-        <div class="my-5 pt-5">
+        <div class="mt-5 pt-5 no-margin-lg">
 
-            <div class="row my-5 pt-5 text-light gap-3 justify-content-around">
-                <div class="col-12 col-xl-auto">
+            <div class="row mt-5 pt-5 no-margin-lg text-light gap-3 justify-content-around">
+                <div class="col-12 col-xl-auto mt-2">
                     <a href="{{ route('vinyls.index') }}" class="card text-decoration-none border-0 welcome-card vinyls">
                         <h3 class="text-light bottom-corner">Vinyls</h3>
                     </a>

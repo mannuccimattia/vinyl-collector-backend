@@ -41,17 +41,17 @@ main {
   background-position: center center;
   background-attachment: fixed;
   position: relative;
-}
 
-main::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+  }
 }
 
 main>* {
@@ -73,10 +73,10 @@ main>* {
 
 .navbar-toggler {
   scale: 0.8;
-}
 
-.navbar-toggler:focus {
-  box-shadow: none !important;
+  &:focus {
+    box-shadow: none !important;
+  }
 }
 
 .dropdown-item.text-light:hover {
@@ -115,8 +115,21 @@ main>* {
   }
 }
 
+.welcome-card,
+.card-link {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+
+  &:hover {
+    transform: scale(1.02);
+    z-index: 1;
+  }
+}
+
 .welcome-card {
-  width: 300px;
+  width: 280px;
   aspect-ratio: 16/9;
   background:
     linear-gradient(-30deg,
@@ -126,18 +139,9 @@ main>* {
       transparent 60%),
     var(--card-bg);
   background-size: cover;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: scale(1);
-  will-change: transform;
   position: relative;
   -webkit-box-shadow: 0px 5px 7px 1px rgba(0, 0, 0, 0.7);
   box-shadow: 0px 5px 7px 1px rgba(0, 0, 0, 0.7);
-
-  &:hover {
-    transform: scale(1.02);
-  }
 }
 
 .welcome-card.vinyls {
@@ -156,6 +160,7 @@ main>* {
   position: absolute;
   bottom: 0.2rem;
   right: 0.8rem;
+  font-size: 1.4rem;
 }
 
 .narrow {
@@ -193,15 +198,6 @@ main>* {
 .vinyl-card-label {
   display: inline-block;
   width: 100px;
-}
-
-.card-link {
-  transition: 0.3s;
-}
-
-.card-link:hover {
-  scale: 1.02;
-  cursor: pointer;
 }
 
 input[type=number]::-webkit-outer-spin-button,
@@ -242,7 +238,18 @@ input[type=number] {
   --bs-pagination-disabled-border-color: #373b3e;
 }
 
-@media (max-width:399.98px) {
+@media (max-width:1198.98px) {
+  .no-margin-lg {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .return-btn {
+    margin-top: 30px !important;
+  }
+}
+
+@media (max-width:575.98px) {
   .card.dark h5 {
     font-size: 1rem;
     padding-right: 0.2rem;
@@ -256,5 +263,10 @@ input[type=number] {
     font-size: 0.8rem;
     margin: 0;
     padding: 0;
+  }
+
+  .no-margin-sm {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 }

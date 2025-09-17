@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row mt-5 pt-5 mb-3 text-light">
+        <div class="row mt-5 pt-5 no-margin-sm mb-3 text-light">
             <div class="col-12 col-lg-4">
                 <img class="img-fluid mb-2"
                     src="{{ $vinyl->cover ? asset('storage/' . $vinyl->cover) : Vite::asset('resources/img/logo/vinylcollector-black-disc.png') }}"
@@ -58,7 +58,7 @@
                     </div>
                 @endcan
 
-                <div class="mt-5">
+                <div class="mt-5 return-btn">
                     <a href="{{ route('vinyls.index') }}" class="btn btn-outline-primary w-100 text-decoration-none">Go
                         back ↺</a>
                 </div>
