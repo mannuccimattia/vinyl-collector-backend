@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row my-4 text-light row-gap-3 align-items-center">
             <div class="col-6">
-                <h2>My collection</h2>
+                <h2 class="my-0">My collection</h2>
             </div>
             @can('admin')
                 <div class="col-6 text-end">

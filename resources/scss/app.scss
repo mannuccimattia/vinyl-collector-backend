@@ -17,6 +17,10 @@ footer {
   font-family: Nunito;
 }
 
+option {
+  font-family: sans-serif !important;
+}
+
 nav.navbar,
 footer {
   position: fixed;
@@ -238,14 +242,25 @@ input[type=number] {
   --bs-pagination-disabled-border-color: #373b3e;
 }
 
-@media (max-width:1198.98px) {
+@media (max-width:1199.98px) {
   .no-margin-lg {
-    margin-top: 0 !important;
+    margin-top: 10px !important;
     padding-top: 0 !important;
   }
 
   .return-btn {
     margin-top: 30px !important;
+  }
+}
+
+@media (max-width:991.98px) {
+  .welcome-card {
+    margin: 20px auto;
+  }
+
+  .no-margin-sm {
+    margin: 0 !important;
+    margin-bottom: 10px !important;
   }
 }
 
@@ -266,7 +281,19 @@ input[type=number] {
   }
 
   .no-margin-sm {
-    margin-top: 0 !important;
+    margin-top: 10px !important;
     padding-top: 0 !important;
+  }
+
+  .welcome-card {
+    margin: 0 auto !important;
+  }
+
+  footer .p-3 {
+    padding: 7px 0 0 0 !important;
+  }
+
+  .row-cols-2 small {
+    font-size: 12px;
   }
 }

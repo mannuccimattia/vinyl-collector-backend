@@ -54,7 +54,7 @@
 
                 <div class="input-group mb-3">
                     <label class="input-group-text dark" for="genres_id">Genres</label>
-                    <div class="form-control dark d-flex flex-wrap row-cols-3">
+                    <div class="form-control dark d-flex flex-wrap row-cols-2 row-cols-md-3">
                         @foreach ($genres as $genre)
                             <div class="col">
                                 <input type="checkbox" name="genres[]" value="{{ $genre->id }}" id="{{ $genre->id }}"

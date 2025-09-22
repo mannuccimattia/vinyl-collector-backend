@@ -6,10 +6,7 @@
 
 @section('content')
     <div class="container">
-        <h2 class="fs-4 text-secondary my-4">
-            {{ __('Profile') }}
-        </h2>
-        <div class="card dark p-4 mb-4 shadow rounded-lg">
+        <div class="card dark mt-2 p-4 mb-4 shadow rounded-lg">
 
             @include('profile.partials.update-profile-information-form')
 
